@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test-and-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Unit tests
+        run: python -m unittest -v
+      - name: Generate PMI and report for the sample parts
+        run: python -m pmi_assistant samples/*.json --out docs --strict
+      - name: Check the published report is up to date
+        run: git diff --exit-code -- docs
