@@ -1,0 +1,304 @@
+{
+  "schema": "pmi-assistant/1.0",
+  "part": {
+    "name": "Mounting Plate MP-160",
+    "material": "EN AW-6082 T6",
+    "outline_mm": [
+      160,
+      100,
+      12
+    ]
+  },
+  "datum_reference_frame": [
+    "A",
+    "B",
+    "C"
+  ],
+  "general_notes": [
+    "General tolerances ISO 2768-mK",
+    "Surface roughness unless otherwise specified: Ra 3.2",
+    "Dimensions in mm"
+  ],
+  "features": [
+    {
+      "id": "F1",
+      "type": "planar_face",
+      "name": "Bottom face",
+      "role": "mating",
+      "pmi": [
+        {
+          "feature_id": "F1",
+          "kind": "datum",
+          "text": "Datum A",
+          "rule": "datum selection",
+          "datum": "A"
+        },
+        {
+          "feature_id": "F1",
+          "kind": "geometric",
+          "text": "Flatness 0.05",
+          "rule": "mating face flatness",
+          "characteristic": "flatness",
+          "value": 0.05
+        },
+        {
+          "feature_id": "F1",
+          "kind": "surface",
+          "text": "Ra 1.6",
+          "rule": "mating face roughness",
+          "value": 1.6
+        }
+      ]
+    },
+    {
+      "id": "F2",
+      "type": "planar_face",
+      "name": "Top face",
+      "role": "general",
+      "pmi": [
+        {
+          "feature_id": "F2",
+          "kind": "note",
+          "text": "General tolerances ISO 2768-mK",
+          "rule": "general tolerance"
+        }
+      ]
+    },
+    {
+      "id": "H1",
+      "type": "bore",
+      "name": "Bearing seat",
+      "role": "bearing_seat",
+      "pmi": [
+        {
+          "feature_id": "H1",
+          "kind": "size",
+          "text": "Ø35 H7 (+0.025/0)",
+          "rule": "ISO 286 H7 fit for locating/bearing bores",
+          "value": 35
+        },
+        {
+          "feature_id": "H1",
+          "kind": "surface",
+          "text": "Ra 0.8",
+          "rule": "precision bore roughness",
+          "value": 0.8
+        },
+        {
+          "feature_id": "H1",
+          "kind": "geometric",
+          "text": "Position Ø0.02 | A|B|C",
+          "rule": "locate precision bore to datum frame",
+          "characteristic": "position",
+          "value": 0.02,
+          "refs": [
+            "A",
+            "B",
+            "C"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P1",
+      "type": "pin_hole",
+      "name": "Locating pin hole 1",
+      "role": "general",
+      "pmi": [
+        {
+          "feature_id": "P1",
+          "kind": "datum",
+          "text": "Datum B",
+          "rule": "datum selection",
+          "datum": "B"
+        },
+        {
+          "feature_id": "P1",
+          "kind": "size",
+          "text": "Ø6 H7 (+0.012/0)",
+          "rule": "ISO 286 H7 fit for locating/bearing bores",
+          "value": 6
+        },
+        {
+          "feature_id": "P1",
+          "kind": "surface",
+          "text": "Ra 0.8",
+          "rule": "precision bore roughness",
+          "value": 0.8
+        },
+        {
+          "feature_id": "P1",
+          "kind": "geometric",
+          "text": "Perpendicularity Ø0.02 | A",
+          "rule": "secondary datum oriented to A",
+          "characteristic": "perpendicularity",
+          "value": 0.02,
+          "refs": [
+            "A"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P2",
+      "type": "pin_hole",
+      "name": "Locating pin hole 2",
+      "role": "general",
+      "pmi": [
+        {
+          "feature_id": "P2",
+          "kind": "datum",
+          "text": "Datum C",
+          "rule": "datum selection",
+          "datum": "C"
+        },
+        {
+          "feature_id": "P2",
+          "kind": "size",
+          "text": "Ø6 H7 (+0.012/0)",
+          "rule": "ISO 286 H7 fit for locating/bearing bores",
+          "value": 6
+        },
+        {
+          "feature_id": "P2",
+          "kind": "surface",
+          "text": "Ra 0.8",
+          "rule": "precision bore roughness",
+          "value": 0.8
+        },
+        {
+          "feature_id": "P2",
+          "kind": "geometric",
+          "text": "Position Ø0.05 | A|B",
+          "rule": "locate precision bore to datum frame",
+          "characteristic": "position",
+          "value": 0.05,
+          "refs": [
+            "A",
+            "B"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C1",
+      "type": "clearance_hole",
+      "name": "Mounting hole 1",
+      "role": "general",
+      "pmi": [
+        {
+          "feature_id": "C1",
+          "kind": "size",
+          "text": "Ø6.6 H13 (+0.22/0) (clearance M6)",
+          "rule": "ISO 273 medium clearance hole, H13 so that MMC = nominal",
+          "value": 6.6
+        },
+        {
+          "feature_id": "C1",
+          "kind": "geometric",
+          "text": "Position Ø0.6 (M) | A|B|C",
+          "rule": "floating fastener T = H - F",
+          "characteristic": "position",
+          "value": 0.6,
+          "modifier": "MMC",
+          "refs": [
+            "A",
+            "B",
+            "C"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "type": "clearance_hole",
+      "name": "Mounting hole 2",
+      "role": "general",
+      "pmi": [
+        {
+          "feature_id": "C2",
+          "kind": "size",
+          "text": "Ø6.6 H13 (+0.22/0) (clearance M6)",
+          "rule": "ISO 273 medium clearance hole, H13 so that MMC = nominal",
+          "value": 6.6
+        },
+        {
+          "feature_id": "C2",
+          "kind": "geometric",
+          "text": "Position Ø0.6 (M) | A|B|C",
+          "rule": "floating fastener T = H - F",
+          "characteristic": "position",
+          "value": 0.6,
+          "modifier": "MMC",
+          "refs": [
+            "A",
+            "B",
+            "C"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C3",
+      "type": "clearance_hole",
+      "name": "Mounting hole 3",
+      "role": "general",
+      "pmi": [
+        {
+          "feature_id": "C3",
+          "kind": "size",
+          "text": "Ø6.6 H13 (+0.22/0) (clearance M6)",
+          "rule": "ISO 273 medium clearance hole, H13 so that MMC = nominal",
+          "value": 6.6
+        },
+        {
+          "feature_id": "C3",
+          "kind": "geometric",
+          "text": "Position Ø0.6 (M) | A|B|C",
+          "rule": "floating fastener T = H - F",
+          "characteristic": "position",
+          "value": 0.6,
+          "modifier": "MMC",
+          "refs": [
+            "A",
+            "B",
+            "C"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "T1",
+      "type": "threaded_hole",
+      "name": "Cover screw",
+      "role": "general",
+      "pmi": [
+        {
+          "feature_id": "T1",
+          "kind": "thread",
+          "text": "M5-6H ↧10",
+          "rule": "ISO 965 default thread class 6H"
+        },
+        {
+          "feature_id": "T1",
+          "kind": "geometric",
+          "text": "Position Ø0.25 (P) | A|B|C",
+          "rule": "fixed fastener T = (H - F) / 2 with projected tolerance zone (zone height = mating part thickness)",
+          "characteristic": "position",
+          "value": 0.25,
+          "modifier": "projected",
+          "refs": [
+            "A",
+            "B",
+            "C"
+          ]
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "passed": true,
+    "findings": []
+  },
+  "agent_summary": "Part 'Mounting Plate MP-160' (EN AW-6082 T6), 9 features, 23 PMI annotations. Datums: A = F1, B = P1, C = P2. Validation: 0 errors, 0 warnings."
+}

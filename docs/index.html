@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PMI Assistant</title><style>
+body{margin:0;background:#fff;color:#111;font:15px/1.5 Arial,Helvetica,sans-serif}
+.wrap{max-width:800px;margin:0 auto;padding:24px 16px 40px}
+h1{font-size:26px;margin:0 0 6px}h2{font-size:20px;margin:36px 0 2px;padding-top:16px;border-top:1px solid #ccc}
+h3{font-size:16px;margin:20px 0 4px}
+a{color:#0645ad}p{margin:8px 0}
+.meta,.rule{color:#555;font-size:13px}
+nav{margin:10px 0}nav a{margin-right:14px}
+ul{margin:4px 0;padding-left:22px}
+.drawing{border:1px solid #ccc;margin:10px 0 4px;overflow:hidden}
+svg{width:100%;height:auto;display:block}
+.outline{fill:#fff;stroke:#000;stroke-width:1.4}
+.hole{fill:#fff;stroke:#000;stroke-width:1.2}.hole.pin_hole{stroke:#0645ad;stroke-width:1.6}
+.hole.warn{stroke:#d35400;stroke-width:2}
+.thread-ring{fill:none;stroke:#000;stroke-width:.8;stroke-dasharray:3 2}
+.cmark{stroke:#888;stroke-width:.6;stroke-dasharray:6 2 1 2}
+.fid{font:12px "Courier New",monospace;fill:#000}.dim{font:12px Arial,sans-serif;fill:#555}
+.datum-box{fill:#fff;stroke:#000;stroke-width:1.1}.datum-txt{font:bold 12px Arial,sans-serif;fill:#000}
+.datum-line{stroke:#000;stroke-width:.9}.datum-dot{fill:#000}
+.feat.hl .hole{fill:#ffef9e}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{border:1px solid #bbb;padding:5px 7px;text-align:left;vertical-align:top}
+th{background:#eee}tr.hl td{background:#fffbe0}
+td:first-child{font-family:"Courier New",monospace;white-space:nowrap}
+footer{color:#555;font-size:13px;margin-top:36px;border-top:1px solid #ccc;padding-top:10px}
+</style></head><body><div class="wrap">
+<h1>PMI Assistant</h1>
+<p>A small tool I wrote to suggest PMI for simple machined parts. It reads the features of a part
+(faces, bores, pin holes, clearance and threaded holes), picks datums, suggests tolerances, GD&amp;T and surface
+finish from ISO tables, checks the result and writes it to JSON. This page is generated from the two sample parts
+in the repository.</p>
+<p><a href="https://github.com/sajin-saji/pmi-assistant">Source code and README on GitHub</a></p>
+<nav>Parts: <a href="#mounting_plate">Mounting Plate MP-160</a><a href="#sensor_bracket">Sensor Bracket SB-90</a></nav>
+
+<section id="mounting_plate">
+  <h2>Mounting Plate MP-160</h2>
+  <p class="meta">EN AW-6082 T6, 160 x 100 x 12 mm</p>
+  <div class="drawing"><svg viewBox="0 0 640 434" role="img" aria-label="Top view of Mounting Plate MP-160">
+<rect class="outline" x="46.0" y="46.0" width="548.0" height="342.5" rx="3"/>
+<text class="dim" x="320.0" y="418.5" text-anchor="middle">160</text>
+<text class="dim" x="20.0" y="217.25" text-anchor="middle" transform="rotate(-90 20.0 217.25)">100</text>
+<circle class="datum-dot" cx="440.6" cy="285.8" r="3"/>
+<line class="datum-line" x1="440.6" y1="285.8" x2="576.0" y2="396.5"/>
+<rect class="datum-box" x="576.0" y="396.5" width="18" height="18"/>
+<text class="datum-txt" x="585.0" y="409.5" text-anchor="middle">A</text>
+<text class="dim" x="570.0" y="409.5" text-anchor="end">bottom face</text>
+<g class="feat" data-fid="H1">
+<circle class="hole bore" cx="320.0" cy="217.2" r="59.9"/>
+<line class="cmark" x1="256.1" y1="217.2" x2="383.9" y2="217.2"/>
+<line class="cmark" x1="320.0" y1="153.3" x2="320.0" y2="281.2"/>
+<text class="fid" x="385.9" y="153.3">H1</text>
+</g>
+<g class="feat" data-fid="P1">
+<circle class="hole pin_hole" cx="97.4" cy="337.1" r="10.3"/>
+<line class="cmark" x1="83.1" y1="337.1" x2="111.7" y2="337.1"/>
+<line class="cmark" x1="97.4" y1="322.9" x2="97.4" y2="351.4"/>
+<text class="fid" x="113.7" y="322.9">P1</text>
+<line class="datum-line" x1="70.1" y1="322.85" x2="90.2" y2="329.9"/>
+<rect class="datum-box" x="61.1" y="304.9" width="18" height="18"/>
+<text class="datum-txt" x="70.1" y="317.9" text-anchor="middle">B</text>
+</g>
+<g class="feat" data-fid="P2">
+<circle class="hole pin_hole" cx="542.6" cy="97.4" r="10.3"/>
+<line class="cmark" x1="528.4" y1="97.4" x2="556.9" y2="97.4"/>
+<line class="cmark" x1="542.6" y1="83.1" x2="542.6" y2="111.7"/>
+<text class="fid" x="558.9" y="83.1">P2</text>
+<line class="datum-line" x1="515.35" y1="83.1" x2="535.4" y2="90.2"/>
+<rect class="datum-box" x="506.4" y="65.1" width="18" height="18"/>
+<text class="datum-txt" x="515.4" y="78.1" text-anchor="middle">C</text>
+</g>
+<g class="feat" data-fid="C1">
+<circle class="hole clearance_hole" cx="97.4" cy="97.4" r="11.3"/>
+<line class="cmark" x1="82.1" y1="97.4" x2="112.7" y2="97.4"/>
+<line class="cmark" x1="97.4" y1="82.1" x2="97.4" y2="112.7"/>
+<text class="fid" x="114.7" y="82.1">C1</text>
+</g>
+<g class="feat" data-fid="C2">
+<circle class="hole clearance_hole" cx="542.6" cy="337.1" r="11.3"/>
+<line class="cmark" x1="527.3" y1="337.1" x2="557.9" y2="337.1"/>
+<line class="cmark" x1="542.6" y1="321.8" x2="542.6" y2="352.4"/>
+<text class="fid" x="559.9" y="321.8">C2</text>
+</g>
+<g class="feat" data-fid="C3">
+<circle class="hole clearance_hole" cx="320.0" cy="347.4" r="11.3"/>
+<line class="cmark" x1="304.7" y1="347.4" x2="335.3" y2="347.4"/>
+<line class="cmark" x1="320.0" y1="332.1" x2="320.0" y2="362.7"/>
+<text class="fid" x="337.3" y="332.1">C3</text>
+</g>
+<g class="feat" data-fid="T1">
+<circle class="hole threaded_hole" cx="320.0" cy="87.1" r="8.6"/>
+<circle class="thread-ring" cx="320.0" cy="87.1" r="10.7"/>
+<line class="cmark" x1="307.4" y1="87.1" x2="332.6" y2="87.1"/>
+<line class="cmark" x1="320.0" y1="74.5" x2="320.0" y2="99.7"/>
+<text class="fid" x="334.6" y="74.5">T1</text>
+</g>
+</svg></div>
+  <p class="meta">Top view. Blue circles are locating pin holes, dashed rings are threaded holes,
+  orange marks a feature with a finding.</p>
+  <h3>Validation</h3>
+  <ul><li>No findings.</li></ul>
+  <h3>General notes</h3>
+  <ul><li>General tolerances ISO 2768-mK</li><li>Surface roughness unless otherwise specified: Ra 3.2</li><li>Dimensions in mm</li></ul>
+  <h3>Suggested PMI</h3>
+  <table><thead><tr><th>ID</th><th>Feature</th><th>PMI (rule)</th></tr></thead>
+  <tbody><tr data-fid="F1"><td>F1</td><td>Bottom face<br><span class="rule">Planar face</span></td><td>Datum A <span class="rule">(datum selection)</span><br>Flatness 0.05 <span class="rule">(mating face flatness)</span><br>Ra 1.6 <span class="rule">(mating face roughness)</span></td></tr><tr data-fid="F2"><td>F2</td><td>Top face<br><span class="rule">Planar face</span></td><td>General tolerances ISO 2768-mK <span class="rule">(general tolerance)</span></td></tr><tr data-fid="H1"><td>H1</td><td>Bearing seat<br><span class="rule">Bore</span></td><td>Ø35 H7 (+0.025/0) <span class="rule">(ISO 286 H7 fit for locating/bearing bores)</span><br>Ra 0.8 <span class="rule">(precision bore roughness)</span><br>Position Ø0.02 | A|B|C <span class="rule">(locate precision bore to datum frame)</span></td></tr><tr data-fid="P1"><td>P1</td><td>Locating pin hole 1<br><span class="rule">Pin hole</span></td><td>Datum B <span class="rule">(datum selection)</span><br>Ø6 H7 (+0.012/0) <span class="rule">(ISO 286 H7 fit for locating/bearing bores)</span><br>Ra 0.8 <span class="rule">(precision bore roughness)</span><br>Perpendicularity Ø0.02 | A <span class="rule">(secondary datum oriented to A)</span></td></tr><tr data-fid="P2"><td>P2</td><td>Locating pin hole 2<br><span class="rule">Pin hole</span></td><td>Datum C <span class="rule">(datum selection)</span><br>Ø6 H7 (+0.012/0) <span class="rule">(ISO 286 H7 fit for locating/bearing bores)</span><br>Ra 0.8 <span class="rule">(precision bore roughness)</span><br>Position Ø0.05 | A|B <span class="rule">(locate precision bore to datum frame)</span></td></tr><tr data-fid="C1"><td>C1</td><td>Mounting hole 1<br><span class="rule">Clearance hole</span></td><td>Ø6.6 H13 (+0.22/0) (clearance M6) <span class="rule">(ISO 273 medium clearance hole, H13 so that MMC = nominal)</span><br>Position Ø0.6 (M) | A|B|C <span class="rule">(floating fastener T = H - F)</span></td></tr><tr data-fid="C2"><td>C2</td><td>Mounting hole 2<br><span class="rule">Clearance hole</span></td><td>Ø6.6 H13 (+0.22/0) (clearance M6) <span class="rule">(ISO 273 medium clearance hole, H13 so that MMC = nominal)</span><br>Position Ø0.6 (M) | A|B|C <span class="rule">(floating fastener T = H - F)</span></td></tr><tr data-fid="C3"><td>C3</td><td>Mounting hole 3<br><span class="rule">Clearance hole</span></td><td>Ø6.6 H13 (+0.22/0) (clearance M6) <span class="rule">(ISO 273 medium clearance hole, H13 so that MMC = nominal)</span><br>Position Ø0.6 (M) | A|B|C <span class="rule">(floating fastener T = H - F)</span></td></tr><tr data-fid="T1"><td>T1</td><td>Cover screw<br><span class="rule">Threaded hole</span></td><td>M5-6H ↧10 <span class="rule">(ISO 965 default thread class 6H)</span><br>Position Ø0.25 (P) | A|B|C <span class="rule">(fixed fastener T = (H - F) / 2 with projected tolerance zone (zone height = mating part thickness))</span></td></tr></tbody></table>
+  <p><a href="mounting_plate.pmi.json">JSON output for this part</a></p>
+</section>
+<section id="sensor_bracket">
+  <h2>Sensor Bracket SB-90</h2>
+  <p class="meta">S235JR, 90 x 60 x 8 mm</p>
+  <div class="drawing"><svg viewBox="0 0 640 457" role="img" aria-label="Top view of Sensor Bracket SB-90">
+<rect class="outline" x="46.0" y="46.0" width="548.0" height="365.3333333333333" rx="3"/>
+<text class="dim" x="320.0" y="441.3333333333333" text-anchor="middle">90</text>
+<text class="dim" x="20.0" y="228.66666666666666" text-anchor="middle" transform="rotate(-90 20.0 228.66666666666666)">60</text>
+<circle class="datum-dot" cx="440.6" cy="301.7" r="3"/>
+<line class="datum-line" x1="440.6" y1="301.7" x2="576.0" y2="419.3"/>
+<rect class="datum-box" x="576.0" y="419.3" width="18" height="18"/>
+<text class="datum-txt" x="585.0" y="432.3" text-anchor="middle">A</text>
+<text class="dim" x="570.0" y="432.3" text-anchor="end">mounting face</text>
+<g class="feat" data-fid="P1">
+<circle class="hole pin_hole" cx="106.9" cy="350.4" r="15.2"/>
+<line class="cmark" x1="87.7" y1="350.4" x2="126.1" y2="350.4"/>
+<line class="cmark" x1="106.9" y1="331.2" x2="106.9" y2="369.7"/>
+<text class="fid" x="128.1" y="331.2">P1</text>
+<line class="datum-line" x1="74.66666666666666" y1="331.22222222222223" x2="96.2" y2="339.8"/>
+<rect class="datum-box" x="65.7" y="313.2" width="18" height="18"/>
+<text class="datum-txt" x="74.7" y="326.2" text-anchor="middle">B</text>
+</g>
+<g class="feat" data-fid="H1">
+<circle class="hole bore" cx="320.0" cy="216.5" r="60.9"/>
+<line class="cmark" x1="255.1" y1="216.5" x2="384.9" y2="216.5"/>
+<line class="cmark" x1="320.0" y1="151.6" x2="320.0" y2="281.4"/>
+<text class="fid" x="386.9" y="151.6">H1</text>
+</g>
+<g class="feat" data-fid="C1">
+<circle class="hole clearance_hole warn" cx="320.0" cy="374.8" r="13.7"/>
+<line class="cmark" x1="302.3" y1="374.8" x2="337.7" y2="374.8"/>
+<line class="cmark" x1="320.0" y1="357.1" x2="320.0" y2="392.5"/>
+<text class="fid" x="339.7" y="357.1">C1</text>
+</g>
+<g class="feat" data-fid="T1">
+<circle class="hole threaded_hole" cx="520.9" cy="155.6" r="9.1"/>
+<circle class="thread-ring" cx="520.9" cy="155.6" r="11.4"/>
+<line class="cmark" x1="507.8" y1="155.6" x2="534.1" y2="155.6"/>
+<line class="cmark" x1="520.9" y1="142.5" x2="520.9" y2="168.7"/>
+<text class="fid" x="536.1" y="142.5">T1</text>
+</g>
+<g class="feat" data-fid="T2">
+<circle class="hole threaded_hole" cx="520.9" cy="94.7" r="9.1"/>
+<circle class="thread-ring" cx="520.9" cy="94.7" r="11.4"/>
+<line class="cmark" x1="507.8" y1="94.7" x2="534.1" y2="94.7"/>
+<line class="cmark" x1="520.9" y1="81.6" x2="520.9" y2="107.8"/>
+<text class="fid" x="536.1" y="81.6">T2</text>
+</g>
+</svg></div>
+  <p class="meta">Top view. Blue circles are locating pin holes, dashed rings are threaded holes,
+  orange marks a feature with a finding.</p>
+  <h3>Validation</h3>
+  <ul><li>Warning: No tertiary datum C: rotation about B is not constrained.</li><li>Warning (C1): Edge distance 6 mm is below 1.5 × Ø4.5 = 6.75 mm.</li></ul>
+  <h3>General notes</h3>
+  <ul><li>General tolerances ISO 2768-mK</li><li>Surface roughness unless otherwise specified: Ra 3.2</li><li>Dimensions in mm</li></ul>
+  <h3>Suggested PMI</h3>
+  <table><thead><tr><th>ID</th><th>Feature</th><th>PMI (rule)</th></tr></thead>
+  <tbody><tr data-fid="F1"><td>F1</td><td>Mounting face<br><span class="rule">Planar face</span></td><td>Datum A <span class="rule">(datum selection)</span><br>Flatness 0.05 <span class="rule">(mating face flatness)</span><br>Ra 1.6 <span class="rule">(mating face roughness)</span></td></tr><tr data-fid="P1"><td>P1</td><td>Locating pin hole<br><span class="rule">Pin hole</span></td><td>Datum B <span class="rule">(datum selection)</span><br>Ø5 H7 (+0.012/0) <span class="rule">(ISO 286 H7 fit for locating/bearing bores)</span><br>Ra 0.8 <span class="rule">(precision bore roughness)</span><br>Perpendicularity Ø0.02 | A <span class="rule">(secondary datum oriented to A)</span></td></tr><tr data-fid="H1"><td>H1</td><td>Cable opening<br><span class="rule">Bore</span></td><td>Ø20 ±0.2 <span class="rule">(ISO 2768-1 general tolerance)</span></td></tr><tr data-fid="C1"><td>C1</td><td>Mounting hole<br><span class="rule">Clearance hole</span></td><td>Ø4.5 H13 (+0.18/0) (clearance M4) <span class="rule">(ISO 273 medium clearance hole, H13 so that MMC = nominal)</span><br>Position Ø0.5 (M) | A|B <span class="rule">(floating fastener T = H - F)</span></td></tr><tr data-fid="T1"><td>T1</td><td>Sensor screw 1<br><span class="rule">Threaded hole</span></td><td>M3-6H ↧6 <span class="rule">(ISO 965 default thread class 6H)</span><br>Position Ø0.2 (P) | A|B <span class="rule">(fixed fastener T = (H - F) / 2 with projected tolerance zone (zone height = mating part thickness))</span></td></tr><tr data-fid="T2"><td>T2</td><td>Sensor screw 2<br><span class="rule">Threaded hole</span></td><td>M3-6H ↧6 <span class="rule">(ISO 965 default thread class 6H)</span><br>Position Ø0.2 (P) | A|B <span class="rule">(fixed fastener T = (H - F) / 2 with projected tolerance zone (zone height = mating part thickness))</span></td></tr></tbody></table>
+  <p><a href="sensor_bracket.pmi.json">JSON output for this part</a></p>
+</section>
+<footer>Sample parts are made up for this demo. Sajin Saji, 2026.</footer>
+</div><script>
+document.querySelectorAll('tr[data-fid]').forEach(tr=>{
+  const g=()=>tr.closest('section').querySelector('.feat[data-fid="'+tr.dataset.fid+'"]');
+  tr.addEventListener('mouseenter',()=>{tr.classList.add('hl');g()&&g().classList.add('hl')});
+  tr.addEventListener('mouseleave',()=>{tr.classList.remove('hl');g()&&g().classList.remove('hl')});});
+</script></body></html>

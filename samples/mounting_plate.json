@@ -1,0 +1,18 @@
+{
+  "part": {
+    "name": "Mounting Plate MP-160",
+    "material": "EN AW-6082 T6",
+    "outline": {"type": "rect", "width": 160, "height": 100, "thickness": 12}
+  },
+  "features": [
+    {"id": "F1", "type": "planar_face", "name": "Bottom face", "role": "mating", "area_mm2": 16000},
+    {"id": "F2", "type": "planar_face", "name": "Top face", "role": "general", "area_mm2": 15000},
+    {"id": "H1", "type": "bore", "name": "Bearing seat", "role": "bearing_seat", "diameter": 35, "depth": 12, "x": 80, "y": 50},
+    {"id": "P1", "type": "pin_hole", "name": "Locating pin hole 1", "diameter": 6, "depth": 12, "x": 15, "y": 15},
+    {"id": "P2", "type": "pin_hole", "name": "Locating pin hole 2", "diameter": 6, "depth": 12, "x": 145, "y": 85},
+    {"id": "C1", "type": "clearance_hole", "name": "Mounting hole 1", "fastener": "M6", "x": 15, "y": 85},
+    {"id": "C2", "type": "clearance_hole", "name": "Mounting hole 2", "fastener": "M6", "x": 145, "y": 15},
+    {"id": "C3", "type": "clearance_hole", "name": "Mounting hole 3", "fastener": "M6", "x": 80, "y": 12},
+    {"id": "T1", "type": "threaded_hole", "name": "Cover screw", "fastener": "M5", "depth": 10, "x": 80, "y": 88}
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "part": {
+    "name": "Sensor Bracket SB-90",
+    "material": "S235JR",
+    "outline": {"type": "rect", "width": 90, "height": 60, "thickness": 8}
+  },
+  "features": [
+    {"id": "F1", "type": "planar_face", "name": "Mounting face", "role": "mating", "area_mm2": 5400},
+    {"id": "P1", "type": "pin_hole", "name": "Locating pin hole", "diameter": 5, "depth": 8, "x": 10, "y": 10},
+    {"id": "H1", "type": "bore", "name": "Cable opening", "role": "general", "diameter": 20, "depth": 8, "x": 45, "y": 32},
+    {"id": "C1", "type": "clearance_hole", "name": "Mounting hole", "fastener": "M4", "x": 45, "y": 6},
+    {"id": "T1", "type": "threaded_hole", "name": "Sensor screw 1", "fastener": "M3", "depth": 6, "x": 78, "y": 42},
+    {"id": "T2", "type": "threaded_hole", "name": "Sensor screw 2", "fastener": "M3", "depth": 6, "x": 78, "y": 52}
+  ]
+}
